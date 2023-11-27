@@ -13,6 +13,7 @@ body {
   background: url(images/Background.jpg);
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 
 .container {
@@ -216,4 +217,36 @@ body {
 
 .city-hide {
   display: none;
+}
+
+#clone-info-weather,
+#clone-info-humidity,
+#clone-info-wind {
+  position: absolute;
+  transform: translateY(-100%);
+}
+
+#clone-info-weather .weather {
+  transform: translateY(120%);
+  transition: transform 1s ease opacity 0s;
+  transition-delay: 0s, 2s;
+}
+.weather-box:not(.active) #clone-info-weather .weather {
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+.active-clone#clone-info-weather .weather {
+  transform: translateY(0%);
+}
+
+#clone-info-humidity span,
+#clone-info-wind span {
+  transform: translateY(100%);
+  transition: transform 1s ease;
+}
+
+.active-clone#clone-info-humidity span,
+.active-clone#clone-info-wind span {
+  transform: translateY(0%);
 }

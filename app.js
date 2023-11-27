@@ -54,15 +54,15 @@ search.addEventListener("click", () => {
             break;
 
           case "Rain":
-            image.src = "images/rain.jpg";
+            image.src = "images/rain.png";
             break;
 
           case "Snow":
-            image.src = "images/snow.jpg";
+            image.src = "images/snow.png";
             break;
 
           case "Clouds":
-            image.src = "images/cloud.jpg";
+            image.src = "images/cloud.png";
             break;
 
           case "Mist":
@@ -74,7 +74,7 @@ search.addEventListener("click", () => {
             break;
 
           default:
-          //   image.src = "images/cloud.jpg";
+            // image.src = "images/cloud.jpg";
         }
 
         temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
@@ -104,6 +104,34 @@ search.addEventListener("click", () => {
           infoHumidity.insertAdjacentElement("afterend", elCloneInfoHumidity);
           infoWind.insertAdjacentElement("afterend", elCloneInfoWind);
         }, 2200);
+
+        const cloneInfoWeather = document.querySelectorAll(
+          ".info-weather.active-clone"
+        );
+        const totalCloneInfoWeather = cloneInfoWeather.length;
+        const cloneInfoWeatherFirst = cloneInfoWeather[0];
+
+        const cloneInfoHumidity = document.querySelectorAll(
+          ".info-humidity.active-clone"
+        );
+        const cloneInfoHumidityFirst = cloneInfoHumidity[0];
+
+        const cloneInfoWind = document.querySelectorAll(
+          ".info-wind.active-clone"
+        );
+        const cloneInfoWindFirst = cloneInfoWind[0];
+
+        if (totalCloneInfoWeather > 0) {
+          cloneInfoWeatherFirst.classList.remove("active-clone");
+          cloneInfoHumidityFirst.classList.remove("active-clone");
+          cloneInfoWindFirst.classList.remove("active-clone");
+
+          setTimeout(() => {
+            cloneInfoWeatherFirst.remove();
+            cloneInfoHumidityFirst.remove();
+            cloneInfoWindFirst.remove();
+          }, 2200);
+        }
       }
     });
 });
