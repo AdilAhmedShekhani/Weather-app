@@ -21,7 +21,7 @@ body {
   width: 400px;
   height: 100px;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(50px);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   padding: 20px;
@@ -111,7 +111,7 @@ body {
 
 .container .active .weather-box .box .info-weather,
 .container .active .weather-details .humidity .info-humidity,
-.container .active .weather-details .wind .info-wind{
+.container .active .weather-details .wind .info-wind {
   transform: translateY(0%);
   transition: transform 1s ease;
 }
@@ -125,7 +125,7 @@ body {
   font-size: 64px;
   line-height: 1;
   font-weight: 700;
-  margin: 20px 0 6px -30px;
+  margin: 1 0 6px -30px;
 }
 
 .weather-box .temperature span {
@@ -187,7 +187,7 @@ body {
 
 .weather-details span {
   display: inline-block;
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 500;
 }
 
